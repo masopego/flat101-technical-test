@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getProducts } from "../../services/ProductService";
+import ProductElement from "../organism/ProductElement";
 
 function ListProducts() {
   const [products, setProducts] = useState([]);
@@ -13,10 +14,12 @@ function ListProducts() {
 
   const renderProducts = () => {
     return products.map((element, index) => (
-      <li key={index} className="product__list--element">
-        {element.name}
-        {element.price}
-      </li>
+      <ProductElement
+        key={index}
+        name={element.name}
+        price={element.price}
+        color={element.color}
+      />
     ));
   };
 
