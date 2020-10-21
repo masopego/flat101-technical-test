@@ -1,30 +1,23 @@
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import CreateProduct from "./pages/CreateProduct";
 import ListProducts from "./pages/ListProducts";
-import "../App.css";
+import Footer from "./organism/Footer/Footer";
+import Header from "./organism/Header/Header";
+import "../stylesheets/core/_reset.scss";
+import "../stylesheets/core/global.scss";
 
 function App() {
   return (
     <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/list-products">List Products</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <main>
         <Switch>
           <Route exact path="/" component={CreateProduct} />
           <Route path="/list-products" component={ListProducts} />
         </Switch>
       </main>
+      <Footer />
     </>
   );
 }

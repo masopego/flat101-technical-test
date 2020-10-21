@@ -4,10 +4,10 @@ const getProducts = () => {
   return fetch(ENDPOINT).then((response) => response.json());
 };
 
-const postProduct = (name, price) => {
+const postProduct = (name, price, color) => {
   return fetch(ENDPOINT, {
     method: "POST",
-    body: JSON.stringify({ name, price }),
+    body: JSON.stringify({ name, price, color }),
     headers: {
       "content-type": "application/json",
     },

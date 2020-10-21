@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 function ProductElement({ name, price, color }) {
   return (
     <li className="product__list--element" style={{ backgroundColor: color }}>
-      {name}
-      {price}
+      <div className="box"></div>
+      <p>{name}</p>
+      <span>{price}€</span>
     </li>
   );
 }
